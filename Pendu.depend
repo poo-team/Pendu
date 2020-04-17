@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1587152529 source:c:\users\maher.bel\desktop\c++\td_classes_c++\pendu\main.cpp
+	<iostream>
+	<Pendu.h>
+	<ctype.h>
+	<cstdlib>
+
+1587150148 source:c:\users\maher.bel\desktop\c++\td_classes_c++\pendu\src\pendu.cpp
+	"Pendu.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+
+1587152515 c:\users\maher.bel\desktop\c++\td_classes_c++\pendu\include\pendu.h
+	<iostream>
+	<string>
+	<vector>
+
+1025005658 c:\users\maher.bel\desktop\c++\td_classes_c++\pendu\include\pile de base.h
+	<stdlib.h>
+
