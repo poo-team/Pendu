@@ -95,7 +95,7 @@ int Motus::Score(int &nb_essai)
 
     }
 }
-void Motus::test(string motpropose, int* tab )
+void Motus::test(string motpropose, int tab[] )
 {
     int k,p,n;
     n=motpropose.size();
@@ -150,8 +150,40 @@ void Motus::test(string motpropose, int* tab )
 	     }
 	}
     }
-
-
+}
+void Motus::resultat()
+    {
+    int nb_essai=6;
+    int k,n,score;
+    int *tab;
+    string motproposee;
+    n=0;
+    while ((nb_essai!=0)&&(n!=motcache.size()))
+        {
+            cout << "Entrer le Mot SVP:"<<endl;
+            cin>>motproposee;
+            n=motproposee.size();
+            tab =new int [n];
+            test(motproposee,tab);
+            int k=0 ;
+            while ((tab[k]== 1)&&(motcache.size()==n)&& (k<n))
+            {
+                k++;
+                }
+            nb_essai--;
+        }
+    if ((k==motcache.size())||(nb_essai==0))
+        {
+             score=Score(nb_essai);
+             cout<<"score = "<<score<<endl;
+             delete [] tab ;
+        }
+    else
+        {
+            cout<<"vous avez perdu"<<endl;
+        }
 
 }
+
+
 

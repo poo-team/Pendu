@@ -8,15 +8,17 @@ using namespace std;
 class Motus
 {
     public:
-        string motcache ;
+
         Motus(string);
         Motus(int);
         string LireFichier();
+        void resultat();
         int Score(int&);
-        void test (string ,int*);
+        void test (string ,int tab[]);
         virtual ~Motus();
     protected:
     private:
+        string motcache ;
 
 };
 

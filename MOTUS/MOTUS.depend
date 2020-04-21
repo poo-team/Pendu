@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1587304645 source:c:\users\samsung\desktop\c++\motus\main.cpp
+1587337798 source:c:\users\samsung\desktop\c++\motus\main.cpp
 	<iostream>
 	<Motus.h>
 	<ctype.h>
 
-1587304569 c:\users\samsung\desktop\c++\motus\include\motus.h
+1587338901 c:\users\samsung\desktop\c++\motus\include\motus.h
 	<iostream>
 	<string>
 	<vector>
