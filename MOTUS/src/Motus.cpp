@@ -24,7 +24,7 @@ Motus::Motus(int n)
  switch(n){
     case(1):
         cout << motcache[0] ;
-        for (int i=0 ; i<motcache.size()-1 ; i++)
+        for (int i=0 ; i<motcache.size()-2 ; i++)
         {
             cout << "*" ;
         }
@@ -158,9 +158,10 @@ void Motus::resultat()
     int *tab;
     string motproposee;
     n=0;
-    while ((nb_essai!=0)&&(n!=motcache.size()))
+    int t=0;
+    while ((nb_essai!=0)&&(t!=motcache.size()))
         {
-            cout << "Entrer le Mot SVP:"<<endl;
+            cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<endl;
             cin>>motproposee;
             n=motproposee.size();
             tab =new int [n];
@@ -169,21 +170,21 @@ void Motus::resultat()
             while ((tab[k]== 1)&&(motcache.size()==n)&& (k<n))
             {
                 k++;
+
                 }
+                t=k;
             nb_essai--;
         }
-    if ((k==motcache.size())||(nb_essai==0))
+    if (t==motcache.size())
         {
              score=Score(nb_essai);
              cout<<"score = "<<score<<endl;
              delete [] tab ;
         }
     else
+        if (nb_essai==0)
         {
             cout<<"vous avez perdu"<<endl;
         }
 
 }
-
-
-
