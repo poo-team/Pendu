@@ -5,13 +5,14 @@ using namespace std;
 int niveau;
 string word;
 int score=0 , fin=0;
-string motproposee;
+string motpropose;
 int mode;
 
 
 
 int main()
 {
+
     cout<<"Motus:"<<endl;
     cout<<"1-jouer solo"<<endl;
     cout<<"2-jouer avec ami(e)"<<endl;
@@ -21,9 +22,17 @@ int main()
         cout<<"1-normal"<<endl;
         cout<<"2-difficile"<<endl;
         cin>>niveau;
-        Motus m(niveau);
+        Motus m1(niveau);
         cout<<"vous avez 6 essais"<<endl;
-        m.resultat();
+        m1.resultat();
+
+        }
+    else {
+         cout<<"entrer le mot a deviner :"<<endl;
+        cin>>motpropose;
+        Motus m2(motpropose);
+        cout<<"vous avez 6 essais"<<endl;
+        m2.resultat();
 
 
     }
@@ -32,5 +41,3 @@ int main()
         return 0;
 
 }
-
-
