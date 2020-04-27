@@ -9,20 +9,23 @@ using namespace std;
 
 Motus::Motus(string mot)
 {
-        motcache = mot ;
-        cout << mot[0] ;
-        for (int i=0 ; i<mot.size()-2 ; i++)
+        motcache.append(1,toupper(mot[0])) ;
+        cout << motcache[0] ;
+        for (int i=1 ; i<mot.size()-1 ; i++)
         {
+             motcache.append(1,toupper(mot[i])) ;
             cout << "*" ;
         }
-        cout << mot[mot.size()-1]<<endl;
+         motcache.append(1,toupper(mot[mot.size()-1])) ;
+        cout << motcache[motcache.size()-1]<<endl;
 
 }
 Motus::Motus(int n)
 {
- motcache = LireFichier();
+  motcache = LireFichier();
  switch(n){
     case(1):
+
         cout << motcache[0] ;
         for (int i=0 ; i<motcache.size()-2 ; i++)
         {
@@ -32,6 +35,7 @@ Motus::Motus(int n)
 
         break;
     case(2):
+
         for (int i=0;i<motcache.size();i++)
         {
             cout << "*";
@@ -47,20 +51,33 @@ Motus::~Motus()
 }
 string Motus::LireFichier()
 {
-    ifstream FichierDictionnaire;
-    vector<string> Dictionnaire(0);
-    int i(0);
-    string MotATrouver;
+    srand(time(0));
 
-    FichierDictionnaire.open("C:\\Users\\samsung\\Desktop\\c++\\Mots.txt", ios::in);
-    for (i = 0; !FichierDictionnaire.eof(); i++)
-        {
-            Dictionnaire.push_back("");
-            getline(FichierDictionnaire, Dictionnaire[i]);
-        }
-    MotATrouver = Dictionnaire[rand() % Dictionnaire.size()];
-    return MotATrouver;
+   ifstream fichier("Mots.txt");
+
+   string mot, ligne, motHasard;
+   int nombre(0);
+   vector<string> tableau(0);
+
+   if(fichier)
+   {
+       while(getline(fichier, ligne))
+       {
+           tableau.push_back(ligne);
+       }
+       nombre = rand() % tableau.size();
+    mot=tableau[nombre];
+	return mot ;
+
+   }
+   else
+   {
+       cout << "ERREUR !";
+   }
+
+   return 0;
 }
+
 int Motus::Score(int &nb_essai)
 {
     switch (nb_essai){
@@ -96,16 +113,16 @@ int Motus::Score(int &nb_essai)
     }
 }
 void Motus::test(string motpropose, int tab[] )
-{
-    int k,p,n;
+{ int k,p,n;
     n=motpropose.size();
     p=motcache.size() ;
+
     char copie[p] ;
 
 
     for (int i=0 ; i<p;i++)
     {
-          copie[i]=(motcache[i]) ;
+          copie[i]=motcache[i] ;
     }
     for (int i=0 ; i<n;i++)
         {
@@ -114,7 +131,12 @@ void Motus::test(string motpropose, int tab[] )
             tab[i]    = 1;
             copie[i] = '*';
         }
+        else
+        {
+            tab[i]=0;
         }
+        }
+
 
      for(int i=0;i<n;i++)
     {
@@ -153,10 +175,11 @@ void Motus::test(string motpropose, int tab[] )
 }
 void Motus::resultat()
     {
-    int nb_essai=6;
+   int nb_essai=6;
     int k,n,score;
     int *tab;
     string motproposee;
+
     n=0;
     int t=0;
     while ((nb_essai!=0)&&(t!=motcache.size()))
@@ -174,17 +197,23 @@ void Motus::resultat()
                 }
                 t=k;
             nb_essai--;
+
         }
     if (t==motcache.size())
-        {
-             score=Score(nb_essai);
+
+
+             {score=Score(nb_essai);
+             cout<< "Felicitation !! "<<endl ;
              cout<<"score = "<<score<<endl;
              delete [] tab ;
-        }
+
+    }
+
     else
         if (nb_essai==0)
         {
             cout<<"vous avez perdu"<<endl;
+            delete [] tab ;
         }
 
 }

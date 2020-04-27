@@ -8,7 +8,9 @@ string word;
 int score=0;
 char c;
 int mode;
+int choix;
 int gagne;
+bool Rejouer = false ;
 int nb_essai=6;
 int main()
 {   cout<<"Pendu:"<<endl;
@@ -69,4 +71,11 @@ int main()
         }
         return 0;
     }
+    cout << "Voulez vous rejouer : " << endl;
+	cout << "1_Oui" << endl;
+	cout << "2_Non" << endl;
+	cout << "Votre choix : ";
+	cin >> choix;
+
+
 }

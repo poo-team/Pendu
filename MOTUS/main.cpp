@@ -4,7 +4,8 @@
 using namespace std;
 int niveau;
 string word;
-int score=0 , fin=0;
+int score=0 , fin=0, choix ;
+bool Rejouer = false ;
 string motpropose;
 int mode;
 
@@ -28,16 +29,37 @@ int main()
 
         }
     else {
-         cout<<"entrer le mot a deviner :"<<endl;
+         cout<<"Saisie Votre Mot Joueur 1:"<<endl;
         cin>>motpropose;
         Motus m2(motpropose);
         cout<<"vous avez 6 essais"<<endl;
         m2.resultat();
 
 
+
     }
+
+	cout << "Voulez vous rejouer : " << endl;
+	cout << "1_Oui" << endl;
+	cout << "2_Non" << endl;
+	cout << "Votre choix : "<< endl ;
+	cin >> choix;
+
+    switch (choix)
+	{
+	case 1 :
+		Rejouer = true;
+		break;
+	default:
+		Rejouer = false;
+		break;
+	}while(Rejouer);
+
+
 
 
         return 0;
 
 }
+
+
