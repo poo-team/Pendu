@@ -14,10 +14,10 @@ Motus::Motus(string mot)
         for (int i=1 ; i<mot.size()-1 ; i++)
         {
              motcache.append(1,toupper(mot[i])) ;
-             cout << "*" ;
+            cout << "*" ;
         }
          motcache.append(1,toupper(mot[mot.size()-1])) ;
-         cout << motcache[motcache.size()-1]<<endl;
+        cout << motcache[motcache.size()-1]<<endl;
 
 }
 Motus::Motus(int n)
@@ -185,7 +185,10 @@ void Motus::resultat()
     while ((nb_essai!=0)&&(t!=motcache.size()))
         {
             cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<endl;
+             do
+            {
             cin>>motproposee;
+              }while (motproposee.size()>motcache.size());
             n=motproposee.size();
             tab =new int [n];
             test(motproposee,tab);

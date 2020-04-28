@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <Pendu.h>
 #include <ctype.h>
@@ -13,7 +14,8 @@ int gagne;
 bool Rejouer = false ;
 int nb_essai=6;
 int main()
-{   cout<<"Pendu:"<<endl;
+{  do
+   { cout<<"Pendu:"<<endl;
     cout<<"1-Jouer Solo Contre Montre"<<endl;
     cout<<"2-Jouer Avec Ami(e)"<<endl;
     cin>>mode;
@@ -69,6 +71,22 @@ int main()
         {
             cout<<"Vous Avez Perdu"<<endl;
         }
-        return 0;
+
     }
+    cout << "Voulez vous rejouer : " << endl;
+	cout << "1_Oui" << endl;
+	cout << "2_Non" << endl;
+	cout << "Votre choix : "<< endl ;
+	cin >> choix;
+	switch (choix)
+	{
+	case 1 :
+		Rejouer = true;
+		break;
+	default:
+		Rejouer = false;
+		break;
+	}
+
+   }while (	Rejouer);
 }

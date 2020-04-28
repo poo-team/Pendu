@@ -18,17 +18,17 @@
 	<random>
 	<fstream>
 
-1587993813 source:c:\users\asus\pendu-motus\motus\main.cpp
+1588103596 source:c:\users\asus\pendu-motus\motus\main.cpp
 	<iostream>
 	<Motus.h>
 	<ctype.h>
 
-1587842538 c:\users\asus\pendu-motus\motus\include\motus.h
+1588103474 c:\users\asus\pendu-motus\motus\include\motus.h
 	<iostream>
 	<string>
 	<vector>
 
-1587997091 source:c:\users\asus\pendu-motus\motus\src\motus.cpp
+1588103642 source:c:\users\asus\pendu-motus\motus\src\motus.cpp
 	"Motus.h"
 	<cstdlib>
 	<ctype.h>

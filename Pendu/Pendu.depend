@@ -22,18 +22,18 @@
 1025005658 c:\users\maher.bel\desktop\c++\td_classes_c++\pendu\include\pile de base.h
 	<stdlib.h>
 
-1587993250 source:c:\users\asus\pendu-motus\pendu\main.cpp
+1588104200 source:c:\users\asus\pendu-motus\pendu\main.cpp
 	<iostream>
 	<Pendu.h>
 	<ctype.h>
 	<cstdlib>
 
-1587842538 c:\users\asus\pendu-motus\pendu\include\pendu.h
+1588103474 c:\users\asus\pendu-motus\pendu\include\pendu.h
 	<iostream>
 	<string>
 	<vector>
 
-1587842538 source:c:\users\asus\pendu-motus\pendu\src\pendu.cpp
+1588104083 source:c:\users\asus\pendu-motus\pendu\src\pendu.cpp
 	"Pendu.h"
 	<cstdlib>
 	<ctype.h>

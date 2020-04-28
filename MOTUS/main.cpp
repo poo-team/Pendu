@@ -5,14 +5,16 @@ using namespace std;
 int niveau;
 string word;
 int score=0 , fin=0, choix ;
-bool Rejouer = false ;
 string motpropose;
 int mode;
+bool Rejouer = false;
 
 
 
 int main()
 {
+do
+   {
 
     cout<<"Motus:"<<endl;
     cout<<"1-jouer solo"<<endl;
@@ -30,10 +32,10 @@ int main()
         }
     else {
          cout<<"Saisie Votre Mot Joueur 1:"<<endl;
-         cin>>motpropose;
-         Motus m2(motpropose);
-         cout<<"vous avez 6 essais"<<endl;
-         m2.resultat();
+        cin>>motpropose;
+        Motus m2(motpropose);
+        cout<<"vous avez 6 essais"<<endl;
+        m2.resultat();
 
 
 
@@ -44,8 +46,7 @@ int main()
 	cout << "2_Non" << endl;
 	cout << "Votre choix : "<< endl ;
 	cin >> choix;
-
-    switch (choix)
+	switch (choix)
 	{
 	case 1 :
 		Rejouer = true;
@@ -53,12 +54,9 @@ int main()
 	default:
 		Rejouer = false;
 		break;
-	}while(Rejouer);
+	}
 
-
-
-
-        return 0;
+   }while (	Rejouer);
 
 }
 
