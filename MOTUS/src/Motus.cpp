@@ -14,10 +14,10 @@ Motus::Motus(string mot)
         for (int i=1 ; i<mot.size()-1 ; i++)
         {
              motcache.append(1,toupper(mot[i])) ;
-            cout << "*" ;
+             cout << "*" ;
         }
          motcache.append(1,toupper(mot[mot.size()-1])) ;
-        cout << motcache[motcache.size()-1]<<endl;
+         cout << motcache[motcache.size()-1]<<endl;
 
 }
 Motus::Motus(int n)

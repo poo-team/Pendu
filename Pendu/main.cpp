@@ -71,11 +71,4 @@ int main()
         }
         return 0;
     }
-    cout << "Voulez vous rejouer : " << endl;
-	cout << "1_Oui" << endl;
-	cout << "2_Non" << endl;
-	cout << "Votre choix : ";
-	cin >> choix;
-
-
 }

@@ -30,10 +30,10 @@ int main()
         }
     else {
          cout<<"Saisie Votre Mot Joueur 1:"<<endl;
-        cin>>motpropose;
-        Motus m2(motpropose);
-        cout<<"vous avez 6 essais"<<endl;
-        m2.resultat();
+         cin>>motpropose;
+         Motus m2(motpropose);
+         cout<<"vous avez 6 essais"<<endl;
+         m2.resultat();
 
 
 

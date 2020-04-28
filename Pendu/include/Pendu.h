@@ -8,10 +8,12 @@ using namespace std;
 class Pendu
 {
     public:
-        int j=0;
+        int nombre_correct_letter=0;
         char correct_letter[27];
         string mot;
         char ** motcache;
+        char first;
+        char last;
         Pendu(int&);
         Pendu(string);
         virtual ~Pendu();

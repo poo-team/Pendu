@@ -42,3 +42,23 @@
 	<random>
 	<fstream>
 
+1588022513 source:c:\users\maher.bel\pendu-motus\pendu\main.cpp
+	<iostream>
+	<Pendu.h>
+	<ctype.h>
+	<cstdlib>
+
+1588023465 c:\users\maher.bel\pendu-motus\pendu\include\pendu.h
+	<iostream>
+	<string>
+	<vector>
+
+1588023334 source:c:\users\maher.bel\pendu-motus\pendu\src\pendu.cpp
+	"Pendu.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+

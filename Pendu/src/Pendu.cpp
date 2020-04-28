@@ -7,16 +7,11 @@
 #include <fstream>
 using namespace std;
 Pendu::Pendu(int &n)
-{int j=0;
+{int nombre_correct_letter=0;
  char correct_letter[27];
-
  mot = LireFichier();
  char first=mot[0];
  char last=mot[mot.size()-1];
-
- /*random_device rd; // obtain a random number from hardware
- mt19937 eng(rd()); // seed the generator
- uniform_int_distribution<> x(0,3);*/
  motcache = new char *[mot.size()];
 
  for (int dim_allouee = 0; dim_allouee <mot.size();dim_allouee++)
@@ -28,7 +23,7 @@ Pendu::Pendu(int &n)
         for (int i=0;i<mot.size();i++)
         {   correct_letter[0]=first;
             correct_letter[1]=last;
-            j=2;
+            nombre_correct_letter=2;
             motcache[i][0]=mot[i];
             if(first==motcache[i][0] || last==motcache[i][0])
             {
@@ -49,7 +44,7 @@ Pendu::Pendu(int &n)
 }
 Pendu::Pendu(string word)
 {
-    int j=0;
+    int nombre_correct_letter=0;
     char correct_letter[27];
     mot = word;
     motcache = new char *[mot.size()];
@@ -84,7 +79,7 @@ void Pendu::affiche()
 }
 bool Pendu::deja_saisie(char &c)
 {   bool Z=false;
-    for(int k=0;k<j;k++)
+    for(int k=0;k<nombre_correct_letter;k++)
     {
         if (correct_letter[k]==c)
             Z=true;
@@ -107,8 +102,8 @@ int Pendu::existe(char &c, int &nb_essai)
                 {
                     motcache[i][1]='1';
                     t=1;
-                    correct_letter[j]=c;
-                    ++j;
+                    correct_letter[nombre_correct_letter]=c;
+                    ++nombre_correct_letter;
                 }
             }
         if(t==1)
@@ -196,17 +191,27 @@ char Pendu::temps(int nb_essai)
 }
 string Pendu::LireFichier()
 {
-    ifstream FichierDictionnaire;
-    vector<string> Dictionnaire(0);
-    int i(0);
-    string MotATrouver;
+     srand(time(0));
 
-    FichierDictionnaire.open("C:\\Users\\Maher.bel\\Desktop\\C++\\TD_Classes_c++\\Pendu\\Mots.txt", ios::in);
-    for (i = 0; !FichierDictionnaire.eof(); i++)
-        {
-            Dictionnaire.push_back("");
-            getline(FichierDictionnaire, Dictionnaire[i]);
-        }
-    MotATrouver = Dictionnaire[rand() % Dictionnaire.size()];
-    return MotATrouver;
+   ifstream fichier("Mots.txt");
+
+   string mot, ligne, motHasard;
+   int nombre(0);
+   vector<string> tableau(0);
+
+   if(fichier)
+   {
+       while(getline(fichier, ligne))
+       {
+           tableau.push_back(ligne);
+       }
+       nombre = rand() % tableau.size();
+    mot=tableau[nombre];
+	return mot ;
+
+   }
+   else
+   {
+       cout << "ERREUR !";
+   }
 }
