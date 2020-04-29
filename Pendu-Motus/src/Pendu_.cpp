@@ -109,7 +109,7 @@ int Pendu_::existe(char &c, int &nb_essai)
             }
         if(t==1)
             {
-                cout<<"  --->> Tres Bien"<<endl;
+                cout<<c<<"  --->> Tres Bien"<<endl;
                 affiche();
                 affiche_bob(nb_essai);
                 cout<<'\t'<<" Il Vous Reste "<<nb_essai<<" Essais"<<endl;
@@ -117,7 +117,7 @@ int Pendu_::existe(char &c, int &nb_essai)
         else if (t==0)
             {
                 --nb_essai;
-                cout<<"  --->> Echec"<<endl;
+                cout<<c<<"  --->> Echec"<<endl;
                 affiche();
                 affiche_bob(nb_essai);
                 cout<<'\t'<<" Il Vous Reste "<<nb_essai<<" Essais"<<endl;
@@ -173,7 +173,7 @@ char Pendu_::temps(int nb_essai)
     do
     {
         cout<<"        Vous Avez "<<nb_essai<<" Essais"<<endl;
-        cout << "Enter the letter please before 5 seconds :"<<'\t';
+        cout << "Entrer La Lettre SVP avant 5 secondes :";
         auto start_s = chrono::system_clock::now();
         d=getch();
         auto stop_s = chrono::system_clock::now();

@@ -36,7 +36,7 @@ int Menu::Menu_pendu()
     cout<<endl;
     cout<<'\t'<<"*****************<MENU>*********************************"<<endl;
     cout<<'\t'<<"*  1--> Jouer Le Pendu Contre l'Ordinateur (montre)    *"<<endl;
-    cout<<'\t'<<"*  2--> Jouer Le Pendu Contre Un jouer                 *"<<endl;
+    cout<<'\t'<<"*  2--> Jouer Le Pendu Contre Un joueur                *"<<endl;
     cout<<'\t'<<"********************************************************"<<endl;
     cout<<'\n'<<"        Entrez Votre Choix ?? "<<'\t';
     cin>>mode;
@@ -80,7 +80,7 @@ int Menu::Menu_motus()
     cout<<endl;
     cout<<'\t'<<"*****************<MENU>*************************"<<endl;
     cout<<'\t'<<"*  1--> Jouer Motus Contre l'Ordinateur        *"<<endl;
-    cout<<'\t'<<"*  2--> Jouer Motus Contre Un jouer            *"<<endl;
+    cout<<'\t'<<"*  2--> Jouer Motus Contre Un joueur           *"<<endl;
     cout<<'\t'<<"************************************************"<<endl;
     cout<<'\n'<<"        Entrez Votre Choix ?? "<<'\t';
     cin>>mode;

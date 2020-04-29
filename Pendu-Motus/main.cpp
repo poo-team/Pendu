@@ -70,7 +70,7 @@ int main()
 
                 if (nb_essai==0 && gagne==0)
                 {
-                    cout<<'\n'<<'\t'<<" --->> Vous Etes Perdu"<<endl;
+                    cout<<'\n'<<'\t'<<" --->> Vous Avez Perdu"<<endl;
                     p1.~Pendu_();
                     p1.affiche_bob(nb_essai);
                 }
@@ -85,7 +85,7 @@ int main()
                 cout<<'\t'<<"Vous Avez 6 Essais"<<endl;
                 while (nb_essai!=0)
                 {
-                    cout <<'\t'<< "Entrer La Lettre SVP:"<<endl;
+                    cout <<'\t'<< "Entrer La Lettre SVP:";
                     c=getch();
                     c=toupper(c);
                     gagne = p1.Pendu_::existe(c,nb_essai);
