@@ -17,10 +17,11 @@ int mode;
 int choix;
 int gagne;
 bool Rejouer = false ;
+bool to_menu = false ;
 int nb_essai=6;
 string motpropose;
 int main()
-{
+{do{
     Menu menu;
     jeu = menu.Menu::Menu_Principal();
     system("cls");
@@ -118,7 +119,7 @@ int main()
                     Rejouer = true;
                     break;
                 case 2 :
-                    Rejouer = false;
+                    to_menu = true;
                     break;
             }
 
@@ -170,7 +171,7 @@ int main()
                 Rejouer = true;
                 break;
             case 2 :
-                Rejouer = false;
+                to_menu = true;
                 break;
         }
 
@@ -184,4 +185,5 @@ int main()
     {
         exit(0);
     }
+  }while (to_menu);
 }

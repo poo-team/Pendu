@@ -47,3 +47,33 @@
 	<string>
 	<cstdlib>
 
+1588194723 source:c:\users\maher.bel\pendu-motus\pendu-motus\src\motus_.cpp
+	"Motus_.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+
+1588194723 c:\users\maher.bel\pendu-motus\pendu-motus\include\motus_.h
+	<iostream>
+	<string>
+	<vector>
+
+1588194723 source:c:\users\maher.bel\pendu-motus\pendu-motus\src\pendu_.cpp
+	"Pendu_.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+	<cstdio>
+
+1588194723 c:\users\maher.bel\pendu-motus\pendu-motus\include\pendu_.h
+	<iostream>
+	<string>
+	<vector>
+	<conio.h>
+
