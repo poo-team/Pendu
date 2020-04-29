@@ -37,13 +37,22 @@
 	<random>
 	<fstream>
 
-1588023823 source:c:\users\maher.bel\pendu-motus\motus\main.cpp
+1588169240 source:c:\users\maher.bel\pendu-motus\motus\main.cpp
 	<iostream>
 	<Motus.h>
 	<ctype.h>
 
-1588021678 c:\users\maher.bel\pendu-motus\motus\include\motus.h
+1588169240 c:\users\maher.bel\pendu-motus\motus\include\motus.h
 	<iostream>
 	<string>
 	<vector>
+
+1588170852 source:c:\users\maher.bel\pendu-motus\motus\src\motus.cpp
+	"Motus.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
 

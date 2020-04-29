@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1588183906 source:c:\users\maher.bel\desktop\pendu-motus\main.cpp
+	<iostream>
+	<Pendu_.h>
+	<Motus_.h>
+	<Menu.h>
+	<ctype.h>
+	<cstdlib>
+	<stdio.h>
+	<conio.h>
+
+1588183906 c:\users\maher.bel\desktop\pendu-motus\include\pendu_.h
+	<iostream>
+	<string>
+	<vector>
+	<conio.h>
+
+1588095210 c:\users\maher.bel\desktop\pendu-motus\include\motus_.h
+	<iostream>
+	<string>
+	<vector>
+
+1588180896 source:c:\users\maher.bel\desktop\pendu-motus\src\motus_.cpp
+	"Motus_.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+
+1588183906 source:c:\users\maher.bel\desktop\pendu-motus\src\pendu_.cpp
+	"Pendu_.h"
+	<cstdlib>
+	<ctype.h>
+	<time.h>
+	<chrono>
+	<random>
+	<fstream>
+	<cstdio>
+
+1588182041 source:c:\users\maher.bel\desktop\pendu-motus\src\menu.cpp
+	"Menu.h"
+
+1588181756 c:\users\maher.bel\desktop\pendu-motus\include\menu.h
+	<iostream>
+	<string>
+	<cstdlib>
+

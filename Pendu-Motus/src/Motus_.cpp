@@ -1,4 +1,4 @@
-#include "Motus.h"
+#include "Motus_.h"
 #include <cstdlib>
 #include <ctype.h>
 #include <time.h>
@@ -7,49 +7,55 @@
 #include <fstream>
 using namespace std;
 
-Motus::Motus(string mot)
+Motus_::Motus_(string mot)
 {
         motcache.append(1,toupper(mot[0])) ;
+        cout<<'\n'<<'\t';
         cout << motcache[0] ;
         for (int i=1 ; i<mot.size()-1 ; i++)
         {
              motcache.append(1,toupper(mot[i])) ;
-            cout << "*" ;
+             cout << "*" ;
         }
          motcache.append(1,toupper(mot[mot.size()-1])) ;
-        cout << motcache[motcache.size()-1]<<endl;
-
+         cout << motcache[motcache.size()-1]<<endl;
+         cout<<'\n';
 }
-Motus::Motus(int n)
+Motus_::Motus_(int n)
 {
   motcache = LireFichier();
  switch(n){
     case(1):
-
+        cout<<'\n'<<'\t';
         cout << motcache[0] ;
+
         for (int i=0 ; i<motcache.size()-2 ; i++)
         {
             cout << "*" ;
         }
+
         cout << motcache[(motcache.size()-1)]<<endl;
+        cout<<'\n';
+
 
         break;
     case(2):
-
+        cout<<'\n'<<'\t';
         for (int i=0;i<motcache.size();i++)
         {
             cout << "*";
         }
+        cout<<'\n';
         cout<<endl;
         break;
  }
 }
 
-Motus::~Motus()
+Motus_::~Motus_()
 {
 
 }
-string Motus::LireFichier()
+string Motus_::LireFichier()
 {
     srand(time(0));
 
@@ -78,7 +84,7 @@ string Motus::LireFichier()
    return 0;
 }
 
-int Motus::Score(int &nb_essai)
+int Motus_::Score(int &nb_essai)
 {
     switch (nb_essai){
         case(6):{
@@ -112,7 +118,7 @@ int Motus::Score(int &nb_essai)
 
     }
 }
-void Motus::test(string motpropose, int tab[] )
+void Motus_::test(string motpropose, int tab[] )
 { int k,p,n;
     n=motpropose.size();
     p=motcache.size() ;
@@ -156,13 +162,13 @@ void Motus::test(string motpropose, int tab[] )
 	{
 	case 0:
 	     {
-		 cout<<"la lettre num "<<i+1<<" n'existe pas"<<endl;
+		 cout<<'\t'<<"la lettre num "<<i+1<<" n'existe pas"<<endl;
 	     }
 	     break;
 
 	case 1:
 	     {
-		 cout<<"la lettre num "<<i+1<<" est bien placee"<<endl;
+		 cout<<'\t'<<"la lettre num "<<i+1<<" est bien placee"<<endl;
 	     }
 	     break;
 
@@ -172,8 +178,9 @@ void Motus::test(string motpropose, int tab[] )
 	     }
 	}
     }
+    cout<<'\n';
 }
-void Motus::resultat()
+void Motus_::resultat()
     {
     int nb_essai=6;
     int k,n,score;
@@ -184,11 +191,14 @@ void Motus::resultat()
     int t=0;
     while ((nb_essai!=0)&&(t!=motcache.size()))
         {
-            cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<endl;
-             do
-            {
+            cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<'\t';
             cin>>motproposee;
-              }while (motproposee.size()>motcache.size());
+            while (motproposee.size()>motcache.size())
+            {
+            cout <<'\t'<< "votre essai doit etre du meme longueur que la mot!! "<<endl;
+            cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<'\t';
+            cin>>motproposee;
+            }
             n=motproposee.size();
             tab =new int [n];
             test(motproposee,tab);
@@ -206,8 +216,8 @@ void Motus::resultat()
 
 
              {score=Score(nb_essai);
-             cout<< "Felicitation !! "<<endl ;
-             cout<<"score = "<<score<<endl;
+             cout<<'\t'<< " --->> Felicitation !! "<<endl ;
+             cout<<'\t'<<" --->> score = "<<score<<endl;
              delete [] tab ;
 
     }
@@ -215,7 +225,7 @@ void Motus::resultat()
     else
         if (nb_essai==0)
         {
-            cout<<"vous avez perdu"<<endl;
+            cout<<'\t'<<" --->> vous avez perdu !!"<<endl;
             delete [] tab ;
         }
 
