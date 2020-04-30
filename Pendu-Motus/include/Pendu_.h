@@ -9,12 +9,6 @@ using namespace std;
 class Pendu_
 {
      public:
-        int nombre_correct_letter=0;
-        char correct_letter[27];
-        string mot;
-        char ** motcache;
-        char first;
-        char last;
         Pendu_(int&);
         Pendu_(string);
         virtual ~Pendu_();
@@ -28,6 +22,12 @@ class Pendu_
         void affiche_win(int);
     protected:
     private:
+        int nombre_correct_letter=0;
+        char correct_letter[27];
+        string mot;
+        char ** motcache;
+        char first;
+        char last;
 };
 
 #endif // PENDU__H
