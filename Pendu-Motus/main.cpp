@@ -11,7 +11,7 @@ int niveau;
 string word;
 int score=0;
 int fin=0;
-char c;
+char Lettre;
 int jeu;
 int mode;
 int choix;
@@ -21,11 +21,11 @@ bool to_menu = false ;
 int nb_essai=6;
 string motpropose;
 int main()
-{do{
+{do{ // boucle pour l'options rejouer et retour au menu
     Menu menu;
     jeu = menu.Menu::Menu_Principal();
     system("cls");
-    while(jeu != 1 && jeu != 2 && jeu != 3 && jeu !=0)
+    while(jeu != 1 && jeu != 2 && jeu != 3 && jeu !=0) // Exception des erreurs de saisie par le joueur
     {
         cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
         jeu = menu.Menu::Menu_Principal();
@@ -36,7 +36,7 @@ int main()
             {
             mode=menu.Menu::Menu_pendu();
             system("cls");
-            while(mode != 1 && mode != 2)
+            while(mode != 1 && mode != 2)// Exception des erreurs de saisie par le joueur
             {
                 cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                 mode=menu.Menu::Menu_pendu();
@@ -46,7 +46,7 @@ int main()
                 int nb_essai=6;
                 niveau=menu.Menu::Menu_pendu_solo();
                 system("cls");
-                while(niveau != 1 && niveau != 2)
+                while(niveau != 1 && niveau != 2)// Exception des erreurs de saisie par le joueur
                 {
                      cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                      niveau=menu.Menu::Menu_pendu_solo();
@@ -57,8 +57,8 @@ int main()
                 p1.affiche_bob(nb_essai);
                 while (nb_essai!=0)
                 {
-                        c=p1.temps(nb_essai);
-                        gagne = p1.Pendu_::existe(c,nb_essai);
+                        Lettre=p1.temps(nb_essai);
+                        gagne = p1.Pendu_::existe(Lettre,nb_essai);
                         if(gagne==1)
                         {
                             score=p1.Pendu_::Score(nb_essai);
@@ -86,9 +86,9 @@ int main()
                 while (nb_essai!=0)
                 {
                     cout <<'\t'<< "Entrer La Lettre SVP:";
-                    c=getch();
-                    c=toupper(c);
-                    gagne = p1.Pendu_::existe(c,nb_essai);
+                    Lettre=getch();
+                    Lettre=toupper(Lettre);
+                    gagne = p1.Pendu_::existe(Lettre,nb_essai);
                     if(gagne==1)
                     {
                         score=p1.Pendu_::Score(nb_essai);
@@ -107,7 +107,7 @@ int main()
             }
             choix = menu.Menu::Menu_Rejouer();
             system("cls");
-            while(choix != 1 && choix != 2)
+            while(choix != 1 && choix != 2)// Exception des erreurs de saisie par le joueur
             {
                 cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                 choix = menu.Menu::Menu_Rejouer();
@@ -130,7 +130,7 @@ int main()
         {
         mode=menu.Menu::Menu_motus();
         system("cls");
-        while(mode != 1 && mode != 2)
+        while(mode != 1 && mode != 2)// Exception des erreurs de saisie par le joueur
             {
                 cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                 mode=menu.Menu::Menu_motus();
@@ -139,7 +139,7 @@ int main()
         if(mode==1){
             niveau=menu.Menu::Menu_motus_solo();
             system("cls");
-            while(niveau != 1 && niveau != 2)
+            while(niveau != 1 && niveau != 2)// Exception des erreurs de saisie par le joueur
                 {
                     cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                       niveau=menu.Menu::Menu_motus_solo();
@@ -159,7 +159,7 @@ int main()
             }
         choix = menu.Menu::Menu_Rejouer();
         system("cls");
-        while(choix != 1 && choix != 2)
+        while(choix != 1 && choix != 2)// Exception des erreurs de saisie par le joueur
             {
                 cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
                 choix = menu.Menu::Menu_Rejouer();
@@ -179,7 +179,7 @@ int main()
     }
     else if (jeu==3)
     {
-        menu.Menu::Menu_credit();
+        menu.Menu::Menu_cree();
     }
     else if (jeu ==0)
     {

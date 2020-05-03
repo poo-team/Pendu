@@ -7,21 +7,21 @@
 #include <fstream>
 #include <cstdio>
 using namespace std;
-Pendu_::Pendu_(int &n)
+Pendu_::Pendu_(int &n)//constructeur (jouer contre montre)
 {int nombre_correct_letter=0;
- char correct_letter[27];
- mot = LireFichier();
- char first=mot[0];
- char last=mot[mot.size()-1];
+ char correct_letter[27];// les lettres saisies par le joueur et qui sont correct
+ mot = LireFichier();// choisir aleatoire du mot a partir du fichier
+ char first=mot[0];// premier lettre du mot
+ char last=mot[mot.size()-1];// dernier lettre du mot
  motcache = new char *[mot.size()];
 
- for (int dim_allouee = 0; dim_allouee <mot.size();dim_allouee++)
+ for (int dim_allouee = 0; dim_allouee <mot.size();dim_allouee++) //allocation dynamique du tableau
  {
      motcache[dim_allouee] = new char[2];
  }
  switch(n){
-    case(1):
-        for (int i=0;i<mot.size();i++)
+    case(1): // niveau normal
+        for (int i=0;i<mot.size();i++)// remplissage du tableau
         {   correct_letter[0]=first;
             correct_letter[1]=last;
             nombre_correct_letter=2;
@@ -34,8 +34,8 @@ Pendu_::Pendu_(int &n)
                 motcache[i][1]='0';
         }
         break;
-    case(2):
-        for (int i=0;i<mot.size();i++)
+    case(2): // niveau difficile
+        for (int i=0;i<mot.size();i++)// remplissage du tableau
         {
             motcache[i][0]=mot[i];
             motcache[i][1]='0';
@@ -43,27 +43,27 @@ Pendu_::Pendu_(int &n)
         break;
  }
 }
-Pendu_::Pendu_(string word)
+Pendu_::Pendu_(string word)// constructeur (Multijoueur)
 {
     int nombre_correct_letter=0;
     char correct_letter[27];
     mot = word;
     motcache = new char *[mot.size()];
-    for (int dim_allouee = 0; dim_allouee <mot.size();dim_allouee++)
+    for (int dim_allouee = 0; dim_allouee <mot.size();dim_allouee++)//allocation dynamique du tableau
     {
         motcache[dim_allouee] = new char[2];
     }
-    for (int i=0;i<mot.size();i++)
+    for (int i=0;i<mot.size();i++)// remplissage du tableau
         {
             motcache[i][0]=toupper(mot[i]);
             motcache[i][1]='0';
         }
 }
-Pendu_::~Pendu_()
+Pendu_::~Pendu_()// destructeur
 {
     delete[] motcache;
 }
-void Pendu_::affiche()
+void Pendu_::affiche()// afficher le mot caché
 {    cout<<'\n'<<"          ";
     for(int i=0;i<mot.size();i++)
     {
@@ -82,14 +82,14 @@ bool Pendu_::deja_saisie(char &c)
 {   bool Z=false;
     for(int k=0;k<nombre_correct_letter;k++)
     {
-        if (correct_letter[k]==c)
+        if (correct_letter[k]==c)// si la lettre saisie dans cette essai été saisie par le joueur ou pas et existant dans le mot
             Z=true;
     }
     return Z;
 }
 int Pendu_::existe(char &c, int &nb_essai)
 {
-    int t=0;
+    int lettre_existe=0;
     int win=1;
     if (deja_saisie(c))
     {
@@ -97,35 +97,35 @@ int Pendu_::existe(char &c, int &nb_essai)
         cout<<"        Il Vous Reste "<<nb_essai<<" Essais"<<endl;
     }
     else{
-        for (int i=0;i<mot.size();i++)
+        for (int i=0;i<mot.size();i++)// parcours du mot lettre par lettre
             {
-                if(c == motcache[i][0])
+                if(c == motcache[i][0])// si la lettre exite dans le mot
                 {
                     motcache[i][1]='1';
-                    t=1;
-                    correct_letter[nombre_correct_letter]=c;
+                    lettre_existe=1;
+                    correct_letter[nombre_correct_letter]=c;//ajouter la lettre au tableau du correct_lettre
                     ++nombre_correct_letter;
                 }
             }
-        if(t==1)
+        if(lettre_existe==1)
             {
                 cout<<c<<"  --->> Tres Bien"<<endl;
-                affiche();
-                affiche_bob(nb_essai);
+                affiche();//afficher le mot caché apres cette essai
+                affiche_bob(nb_essai); // afficher le garçon (bob)
                 cout<<'\t'<<" Il Vous Reste "<<nb_essai<<" Essais"<<endl;
             }
-        else if (t==0)
+        else if (lettre_existe==0)
             {
-                --nb_essai;
+                --nb_essai;//decrementer le nommbre d essai
                 cout<<c<<"  --->> Echec"<<endl;
-                affiche();
-                affiche_bob(nb_essai);
+                affiche();//afficher le mot caché apres cette essai
+                affiche_bob(nb_essai);// afficher le garçon (bob)
                 cout<<'\t'<<" Il Vous Reste "<<nb_essai<<" Essais"<<endl;
             }
     }
     for (int i=0;i<mot.size();i++)
     {
-        if (motcache[i][1]=='0')
+        if (motcache[i][1]=='0')// le mot n'est pas totalement découverte
         {
             win=0;
         }
@@ -174,16 +174,16 @@ char Pendu_::temps(int nb_essai)
     {
         cout<<"        Vous Avez "<<nb_essai<<" Essais"<<endl;
         cout << "Entrer La Lettre SVP avant 5 secondes :";
-        auto start_s = chrono::system_clock::now();
-        d=getch();
-        auto stop_s = chrono::system_clock::now();
-        if(stop_s - start_s >= chrono::seconds(5))
+        auto start_s = chrono::system_clock::now();// enregistrer l'heure de début
+        d=getch();// lire la lettre
+        auto stop_s = chrono::system_clock::now();// enregistrer l'heure de fin
+        if(stop_s - start_s >= chrono::seconds(5))// si la difference du temps superieur a 5s
             {
                 cout <<'\t'<< " Le Temps S'est Ecoule!!"<<endl;
                 d=NULL;
             }
-        else if(d >= 'a'&&d <= 'z' || d>= 'A'&&d <= 'Z' ){
-            }
+        else if(d >= 'a'&&d <= 'z' || d>= 'A'&&d <= 'Z' ) // si la character saisie est une lettre
+            {}
             else {
                 cout <<'\t'<< " Il Faut Saisie Un Lettre!!"<<endl;
                 d='*';

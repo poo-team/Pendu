@@ -18,7 +18,7 @@ class Menu
         int Menu_motus_solo();
         string Menu_motus_multijoueur();
         int Menu_Rejouer();
-        void Menu_credit();
+        void Menu_cree();
     protected:
     private:
 };

@@ -19,8 +19,8 @@ int Menu::Menu_Principal()
     cout<<'\t'<<"*****************<MENU>*************************"<<endl;
     cout<<'\t'<<"*  1--> Jouer Le Pendu                         *"<<endl;
     cout<<'\t'<<"*  2--> Jouer Motus                            *"<<endl;
-    cout<<'\t'<<"*  3--> Credits                                *"<<endl;
-    cout<<'\t'<<"*  0--> Exit                                   *"<<endl;
+    cout<<'\t'<<"*  3--> Cree par                               *"<<endl;
+    cout<<'\t'<<"*  0--> Quitter                                *"<<endl;
     cout<<'\t'<<"************************************************"<<endl;
     cout<<'\n'<<"        Entrez Votre Choix ?? "<<'\t';
     cin>>jeu;
@@ -123,16 +123,16 @@ int Menu::Menu_motus()
      cout<<endl;
      cout<<'\t'<<"************************************************"<<endl;
      cout<<'\t'<<"*  1--> Rejouer                                *"<<endl;
-     cout<<'\t'<<"*  2--> Exit to Menu                           *"<<endl;
+     cout<<'\t'<<"*  2--> Retour au menu principal               *"<<endl;
      cout<<'\t'<<"************************************************"<<endl;
      cout<<'\n'<<"        Entrez Votre Choix ?? "<<'\t';
      cin >> choix;
      return choix;
  }
 
-void Menu::Menu_credit()
+void Menu::Menu_cree()
 {   cout<<'\n';
-    cout<<'\t'<<"*****************<Credit by Poo-Team >*******************"<<endl;
+    cout<<'\t'<<"*****************<Cree par Poo-Team >********************"<<endl;
     cout<<'\t'<<"*   --> Maher Benltaif                                  *"<<endl;
     cout<<'\t'<<"*   --> Wiem Babou                                      *"<<endl;
     cout<<'\t'<<"*   --> Eya Aribi                                       *"<<endl;
