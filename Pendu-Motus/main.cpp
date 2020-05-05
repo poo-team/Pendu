@@ -27,7 +27,7 @@ int main()
     system("cls");
     while(jeu != 1 && jeu != 2 && jeu != 3 && jeu !=0) // Exception des erreurs de saisie par le joueur
     {
-        cout<<'\t'<<"taper 1 ou 2 pour votre choix! "<<endl;
+        cout<<'\t'<<"taper 1 ou 2 ou 3 ou 0 pour votre choix! "<<endl;
         jeu = menu.Menu::Menu_Principal();
         system("cls");
     }

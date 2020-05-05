@@ -195,7 +195,7 @@ void Motus_::resultat()
             cin>>motproposee;
             while (motproposee.size()>motcache.size())
             {
-            cout <<'\t'<< "votre essai doit etre du meme longueur que la mot!! "<<endl;
+            cout <<'\t'<< "votre essai doit etre du meme longueur que le mot!! "<<endl;
             cout << "Entrer le Mot SVP vous avez "<< nb_essai<<" essai:"<<'\t';
             cin>>motproposee;
             }
